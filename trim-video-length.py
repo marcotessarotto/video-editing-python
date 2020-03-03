@@ -1,6 +1,9 @@
 import sys
 import ffmpeg
 
+# very useful:
+# https://github.com/kkroening/ffmpeg-python/tree/master/examples
+
 
 def show_info(file_name):
     try:
