@@ -24,5 +24,10 @@ ffmpeg.run(out)
 
 print("finished!")
 
+# trim first 201 seconds from video (does not reencode the rest, so it is fast)
 
+# ffmpeg -i source.mp4 -ss 201 -vcodec copy -acodec copy destination.mp4
+
+# see also:
+# https://superuser.com/questions/258032/is-it-possible-to-use-ffmpeg-to-trim-off-x-seconds-from-the-beginning-of-a-video/269960#269960
 
