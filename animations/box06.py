@@ -16,9 +16,9 @@ print(f"fig_win_ext.x0={fig_win_ext.x0} fig_win_ext.x1={fig_win_ext.x1}")
 
 ax.set_facecolor(color='black')
 
-ax.plot(1, 1, 'o', color='black', markersize=1)
-
-ax.plot(1000, 1000, 'o', color='black', linewidth=2, markersize=1)
+# ax.plot(1, 1, 'o', color='black', markersize=1)
+#
+# ax.plot(1000, 1000, 'o', color='black', linewidth=2, markersize=1)
 
 
 rectangle_height = 300
@@ -95,7 +95,10 @@ def animate2(i):
 
     if not txt.get_visible() and txt_win_ext_orig.x1 > patch_win_ext.x1:
         txt.set_visible(True)
-        print(f"moving back to {(txt_win_ext_orig.x1 - patch_win_ext.x1)}")
+        txt_win_ext.x0 = txt_win_ext_orig.x0 - (txt_win_ext_orig.x1 - patch_win_ext.x1)
+        print(f"moving back by {(txt_win_ext_orig.x1 - patch_win_ext.x1)}")
+        print(txt_win_ext_orig.x0 - (txt_win_ext_orig.x1 - patch_win_ext.x1))
+        print(txt_win_ext.x0)
         txt.set_x(txt_win_ext_orig.x0 - (txt_win_ext_orig.x1 - patch_win_ext.x1))
 
     # if box_pos + txt_win_ext.x1 - txt_win_ext.x0 > fig_win_ext2.x1:
