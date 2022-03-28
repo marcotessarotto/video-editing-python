@@ -11,28 +11,10 @@ ax.plot(1, 1, 'o', color='black', markersize=1)
 
 ax.plot(1000, 1000, 'o', color='black', linewidth=2, markersize=1)
 
-# start_x = 0
-# end_x = 1000
-# velocity = 1.0
-# acceleration = 0
-# pos = start_x
-# dt = 1
-#
-#
-# while pos < end_x:
-#     dist = ((end_x-start_x)/2 - pos)
-#     velocity = velocity + dist * 0.001
-#     # if dist > (end_x - start_x) / 2:
-#     #     velocity = velocity + dist * 0.001
-#     # else:
-#     #     velocity = velocity - dist * 0.001
-#
-#     pos = pos + velocity * dt
-#     print(f"pos={pos}  vel={velocity}")
 
-start_x = 0
-end_x = 1000
-velocity = 1.0
+start_x = 1000
+end_x = 0
+velocity = 0.0
 pos = start_x
 dt = 1
 
