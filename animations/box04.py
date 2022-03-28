@@ -2,9 +2,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 import matplotlib.animation as animation
 
-
 fig, ax = plt.subplots()
-
 
 ax.set_facecolor(color='black')
 
@@ -37,9 +35,11 @@ velocity = 1.0
 pos = start_x
 dt = 1
 
+last_pos = pos
+
 def animate2(i):
-    global start_x, end_x, velocity, pos, dt
-    # point from (100,100) to (900,100) with acceleration and deceleration
+    global start_x, end_x, velocity, pos, dt, last_pos
+    # point from (0,500) to (1000,500) with acceleration and then deceleration
 
     # if pos > 1000:
     #     return
@@ -55,12 +55,13 @@ def animate2(i):
     if pos > 1000:
         return
 
-    ax.plot(pos, 500, 'o', color='#0abab5', linewidth=5, markersize=1)
+    # ax.plot(pos, 500, 'o', color='#0abab5', linewidth=5, markersize=1)
+    ax.plot([last_pos, pos], [500,500], color='#0abab5', linewidth=5, markersize=1)
+    last_pos = pos
 
 
 ani = animation.FuncAnimation(
     fig, animate2, frames=100,
     interval=10, blit=False, save_count=100, repeat=False)
-
 
 plt.show()
