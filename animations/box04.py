@@ -1,14 +1,15 @@
 import numpy as np
 import matplotlib.pyplot as plt
 import matplotlib.animation as animation
+from matplotlib.patches import Rectangle
 
 fig, ax = plt.subplots()
 
 ax.set_facecolor(color='black')
 
-ax.plot(1, 1, 'ro', markersize=1)
+ax.plot(1, 1, 'o', color='black', markersize=1)
 
-ax.plot(1000, 1000, 'ro', linewidth=2, markersize=1)
+ax.plot(1000, 1000, 'o', color='black', linewidth=2, markersize=1)
 
 # start_x = 0
 # end_x = 1000
@@ -56,7 +57,12 @@ def animate2(i):
         return
 
     # ax.plot(pos, 500, 'o', color='#0abab5', linewidth=5, markersize=1)
-    ax.plot([last_pos, pos], [500,500], color='#0abab5', linewidth=5, markersize=1)
+    # ax.plot([last_pos, pos], [500, 500], color='#0abab5', linewidth=5, markersize=1)
+
+    ax.add_patch(Rectangle((last_pos, 500), width=pos-last_pos, height=300,
+                           facecolor='#0abab5',
+             fill=True))
+
     last_pos = pos
 
 
